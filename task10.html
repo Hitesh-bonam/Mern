@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>csstask5</title>
+    <style type="text/css">
+        body {
+          padding-left: 180px;
+          font-family: Georgia, "Times New Roman",
+                Times, serif;
+          color: purple;
+          background-color: #d8da3d }
+        ul{
+          list-style-type:none;
+          padding:0;
+          margin: 0;
+          position: absolute;
+          top: 30px;
+          left: 15px;
+          width: 145px }
+        h1 {
+          font-family: Helvetica, Geneva, Arial,
+                SunSans-Regular, sans-serif }
+        li {
+          background: white;
+          margin: 8px 0;
+          padding: 5px;
+          border-right: 15px solid black;
+         }
+        a {
+          text-decoration: none ;
+          color:blue;
+         }
+
+        a:visited {
+          color: purple 
+        }
+
+        address {
+          margin-top: 15px;
+          padding-top: 15px;
+          border-top: thin dotted
+         }
+        </style>
+</head>
+<body>
+    <!-- Site navigation menu -->
+<ul>
+    <li><a href="https://www.ethnus.com/">Home page</a>
+    </li><li><a href="https://www.spotify.com/">Musings</a>
+    </li><li><a href="https://www.railway.com/">My town</a>
+    </li><li><a href="https://www.links.com/">Links</a>
+  </li></ul>
+  
+  <h1>My first styled page</h1>
+  
+  <p>Welcome to my styled page!</p>
+  
+  <p>It lacks images, but at least it has style.
+  And it has links, even if they don't go
+  anywhere…</p>
+  
+  <p>There should be more here, but I don't know
+  what yet.</p>
+  
+  <!-- Sign and date the page, it's only polite! -->
+  <address>Made 5 April 2004<br>
+    by myself.</address>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
